@@ -10,16 +10,16 @@
   :root{
     --paper:#efe9dd; --paper-2:#e6dece; --ink:#17140f; --ink-2:#4a4438;
     --line:#c8bfa9; --red:#bf2417; --blue:#12408c; --cyan:#1f92c4; --amber:#f4c430;
-    --paper-tint:#f5f0e6; --shadow:rgba(23,20,15,.16); --stage:#efe9dd;
+    --paper-tint:#f5f0e6; --shadow:rgba(23,20,15,.16); --stage:#efe9dd; --navy:#123a8c; --sky:#2f9bd6;
     --bar:74px;
     color-scheme: light;
   }
   :root[data-theme="light"]{ --paper:#efe9dd; --paper-2:#e6dece; --ink:#17140f; --ink-2:#4a4438;
     --line:#c8bfa9; --red:#bf2417; --blue:#12408c; --cyan:#1f92c4; --amber:#f4c430;
-    --paper-tint:#f5f0e6; --shadow:rgba(23,20,15,.16); --stage:#efe9dd; color-scheme:light; }
+    --paper-tint:#f5f0e6; --shadow:rgba(23,20,15,.16); --stage:#efe9dd; --navy:#123a8c; --sky:#2f9bd6; color-scheme:light; }
   :root[data-theme="dark"]{ --paper:#141210; --paper-2:#1d1a15; --ink:#f2ebdd; --ink-2:#b3aa98;
     --line:#39342a; --red:#ff5346; --blue:#5a8ce0; --cyan:#37b6e6; --amber:#f4c430;
-    --paper-tint:#221e17; --shadow:rgba(0,0,0,.5); --stage:#141210; color-scheme:dark; }
+    --paper-tint:#221e17; --shadow:rgba(0,0,0,.5); --stage:#141210; --navy:#4f7ad6; --sky:#37b6e6; color-scheme:dark; }
 
   *{box-sizing:border-box;}
   html{-webkit-text-size-adjust:100%; scroll-behavior:smooth; scroll-snap-type:y proximity; background:#0d0b09;}
@@ -31,8 +31,8 @@
 
   .app{ max-width:480px; margin-inline:auto; position:relative; background:var(--paper); box-shadow:0 0 60px rgba(0,0,0,.35); }
 
-  .stripe{height:8px; border:0; flex:0 0 auto;
-    background:repeating-linear-gradient(115deg, var(--blue) 0 16px, var(--cyan) 16px 22px, var(--stage) 22px 30px, var(--red) 30px 46px, var(--stage) 46px 54px);}
+  .stripe{height:10px; border:0; flex:0 0 auto;
+    background:repeating-linear-gradient(115deg, var(--navy) 0 18px, var(--sky) 18px 26px, var(--stage) 26px 32px, var(--red) 32px 52px, var(--stage) 52px 60px);}
 
   .screen{ min-height:100vh; min-height:100svh; scroll-snap-align:start;
     display:flex; flex-direction:column; background:var(--stage);
@@ -69,6 +69,15 @@
     font:700 11px/1 ui-monospace,monospace; letter-spacing:.18em; text-transform:uppercase; margin-top:4px; text-shadow:0 1px 8px rgba(0,0,0,.5);}
   .cue .a{animation:bob 1.6s ease-in-out infinite;}
   @keyframes bob{0%,100%{transform:translateY(0)} 50%{transform:translateY(4px)}}
+
+  /* ============ WERKSTEAM (team livery, no racing) ============ */
+  .cover-livery{position:absolute; z-index:2; left:-12%; right:-12%; top:-9%; height:36%;
+    transform:rotate(-8deg); transform-origin:top left; pointer-events:none; opacity:.96;
+    background:linear-gradient(90deg, var(--navy) 0 30%, var(--sky) 30% 42%, #efe7d6 42% 50%, #cf2418 50% 80%, var(--navy) 80% 100%);
+    box-shadow:0 12px 34px rgba(0,0,0,.35);}
+  .taghint{align-self:flex-start; display:inline-flex; align-items:center; gap:7px; margin-top:2px;
+    font:800 11px/1 ui-monospace,monospace; letter-spacing:.06em; text-transform:uppercase; color:#14110c;
+    background:var(--amber); padding:8px 12px; border-radius:999px; box-shadow:2px 2px 0 rgba(0,0,0,.25);}
 
   /* ============ STAGE ============ */
   .stage{gap:12px;}
@@ -202,10 +211,11 @@
       <div class="cover-sunset"></div>
       <div class="cover-scrim"></div>
     </div>
+    <div class="cover-livery" aria-hidden="true"></div>
     <div class="cover-inner">
       <p class="eyebrow">Roadbook · 6.–9. August 2026</p>
       <div class="plate"><span class="display l1">AlpenTour</span><span class="display l2">'26</span></div>
-      <p class="lede"><b>Vier Etappen quer durch die Alpen.</b></p>
+      <p class="lede"><b>Vier Etappen quer durch die Alpen.</b> Eine Ausfahrt unter Freunden — kein Rennen, sondern Kurven, Pässe &amp; Espresso.</p>
       <div class="hstats">
         <div class="hstat"><div class="k">Etappen</div><div class="v"><b>4</b></div></div>
         <div class="hstat"><div class="k">Pässe</div><div class="v"><b>11</b></div></div>
@@ -213,6 +223,7 @@
         <div class="hstat"><div class="k">Autos</div><div class="v"><b>12</b></div></div>
       </div>
       <div class="cue"><span class="a">↓</span> Swipe zu den Etappen</div>
+      <div class="taghint">📸 Fotos posten: <b>#SipNRefuel26</b></div>
     </div>
   </section>
 
@@ -340,6 +351,7 @@
         </ul>
         <p>Elf Pässe in vier Tagen — das haben wir 2026 gefahren. Höchster Punkt: Nufenen, 2.478 m. Im August alle offen; vor Abfahrt kurz auf Sperrungen checken.</p>
       </div>
+      <div class="note"><h3>Foto-Wall</h3><p>Postet eure Bilder auf Instagram unter <b>#SipNRefuel26</b> — so sammeln wir alle Fotos der Tour an einem Ort.</p></div>
       <div class="note"><h3>Vignette</h3><p>CH-E-Vignette Pflicht (Tag 1 &amp; 4) — offiziell &amp; ohne Aufschlag über BAZG (admin.ch), gilt auch fürs Wechselschild. Italien: keine Vignette, aber Maut.</p></div>
       <div class="note"><h3>Espresso am Furka</h3><p>Freitagmorgen, gegen 5 Uhr noch in der Dunkelheit hoch zum Furkapass — und wenn die Sonne aufgeht, gibt's frischen Espresso. Kaffeestopp vor der Königsetappe.</p></div>
       <div class="note"><h3>Livigno-Tunnel</h3><p>Livigno ist zollfrei. An-/Abfahrt über den Munt-la-Schera-Tunnel: einspurig, ampelgeregelt, mautpflichtig.</p></div>
@@ -349,7 +361,7 @@
 
   <footer class="foot">
     AlpenTour '26 · Porsche &amp; Friends<br>
-    Distanzen laut Google Maps · Höhen gerundet
+    Fotos: #SipNRefuel26 · Distanzen laut Google Maps · Höhen gerundet
     <div class="cassette"><svg viewBox="0 0 26 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="1" width="24" height="14" rx="2"/><circle cx="9" cy="8" r="2.3"/><circle cx="17" cy="8" r="2.3"/><path d="M9 12h8"/></svg> Mixtape '26 · Seite A</div>
   </footer>
 
