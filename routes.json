@@ -47,7 +47,7 @@
         { "label": "Hotel Marzia, Livigno", "role": "start", "address": "Hotel Marzia, Via Pedrana 388, 23041 Livigno, Italien" },
         { "label": "Zernez",                "role": "stop",  "coord": "46.697984, 10.094331" },
         { "label": "Flüelapass",            "role": "pass",  "coord": "46.747500, 9.950284" },
-        { "label": "Davos",                 "role": "stop",  "coord": "46.796198, 9.823689" },
+        { "label": "Davos",                 "role": "stop",  "coord": "46.811637, 9.844443" },
         { "label": "Markkleeberg",          "role": "stop",  "coord": "51.278575, 12.371882" }
       ]
     }
