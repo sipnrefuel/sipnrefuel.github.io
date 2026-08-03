@@ -108,6 +108,8 @@
   .ri--finish .ic{background:var(--red); color:#fff; border-color:var(--red);}
   .ri--top .ic{border-color:var(--red); color:var(--red); background:color-mix(in srgb,var(--amber) 26%,var(--paper));}
   .ri--top .alt{color:var(--red);}
+  .ri--meet .ic{border-color:var(--red); color:var(--red);}
+  .alt.time{color:var(--ink);} .alt.time small{color:var(--ink-2); font-weight:600;}
 
   /* ============ STICKY NAVI BAR ============ */
   .navibar{ position:fixed; bottom:0; left:50%; transform:translateX(-50%);
@@ -195,6 +197,7 @@
     <symbol id="i-transit" viewBox="0 0 24 24"><path d="M3 12 H18 M13 7 L18 12 L13 17" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
     <symbol id="i-hotel" viewBox="0 0 24 24"><path d="M3 18.5V11h9.2a3.6 3.6 0 0 1 3.6 3.6V18.5 M3 15h13.8 M4.6 18.5v1.7 M15.8 18.5v1.7 M6.2 11V9.4a1 1 0 0 1 1-1h2.2a1 1 0 0 1 1 1V11" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></symbol>
     <symbol id="i-finish" viewBox="0 0 24 24"><path d="M6 5h4v4H6z M14 5h4v4h-4z M10 9h4v4h-4z M6 13h4v4H6z M14 13h4v4h-4z" fill="currentColor"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 22c4.4-5 7-8.4 7-12A7 7 0 1 0 5 10c0 3.6 2.6 7 7 12z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.4" fill="currentColor"/></symbol>
   </svg>
 
   <!-- ============ COVER ============ -->
@@ -225,10 +228,12 @@
       <h2 class="route display">Markkleeberg <span class="arw">→</span> Grimselpass</h2></div>
     <p class="facts">783 km · 8–11 h · 3 Pässe</p>
     <ol class="rte">
-      <li class="ri ri--start"><span class="ic"><svg><use href="#i-start"/></svg></span>
-        <span class="rl"><b>Markkleeberg</b><small>Start · Abfahrt 06:30</small></span></li>
-      <li class="ri ri--transit"><span class="ic"><svg><use href="#i-transit"/></svg></span>
-        <span class="rl"><b>A9 · Bodensee · Chur → Landquart</b><small>Autobahn-Transit · Treff ~13:30</small></span></li>
+      <li class="ri ri--start"><span class="ic"><svg><use href="#i-pin"/></svg></span>
+        <span class="rl"><b>Treffpunkt 1 · Pörstental</b><small>Rastplatz · Raum Leipzig</small></span><span class="alt time">06:30</span></li>
+      <li class="ri ri--meet"><span class="ic"><svg><use href="#i-pin"/></svg></span>
+        <span class="rl"><b>Treffpunkt 2 · Lipperts West</b><small>Rastplatz</small></span><span class="alt time">07:45</span></li>
+      <li class="ri ri--meet"><span class="ic"><svg><use href="#i-pin"/></svg></span>
+        <span class="rl"><b>Treffpunkt 3 · Landquart</b><small>ggü. Coop · ab hier alle zusammen</small></span><span class="alt time">~13:30</span></li>
       <li class="ri ri--pass"><span class="ic"><svg><use href="#i-pass"/></svg></span>
         <span class="rl"><b>Oberalppass</b></span><span class="alt">2.044<small> m</small></span></li>
       <li class="ri ri--pass ri--top"><span class="ic"><svg><use href="#i-pass"/></svg></span>
