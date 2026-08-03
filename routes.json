@@ -23,6 +23,7 @@
         { "label": "Nufenenpass",              "role": "pass",  "coord": "46.472897, 8.389343" },
         { "label": "San-Bernardino-Pass",      "role": "pass",  "coord": "46.497149, 9.171140" },
         { "label": "Splügenpass",              "role": "pass",  "coord": "46.505616, 9.330336" },
+        { "label": "Chiavenna",                "role": "stop",  "coord": "46.320066, 9.400743" },
         { "label": "Malojapass",               "role": "pass",  "coord": "46.399936, 9.695807" },
         { "label": "Hotel Schweizerhof, Sils", "role": "stop",  "address": "Hotel Schweizerhof, Via da Fex 1, 7514 Sils im Engadin, Schweiz" }
       ]
