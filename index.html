@@ -40,7 +40,14 @@
 
   /* ============ COVER (Werksteam-Poster · Richtung 1) ============ */
   .cover{ position:relative; overflow:hidden; padding:0; background:var(--stage); display:flex; flex-direction:column; }
-  .cover-band{position:absolute; z-index:1; left:-30%; right:-30%; top:-24%; height:66%;
+  .cover-bgvid{position:absolute; inset:0; z-index:0; overflow:hidden; background:var(--stage);}
+  .cover-bgvid .cover-vid{position:absolute; left:0; top:-10%; width:100%; height:120%; object-fit:cover; will-change:transform;}
+  .cover-cream{position:absolute; inset:0; z-index:1; pointer-events:none;
+    background:linear-gradient(180deg, var(--stage) 0%, var(--stage) 42%,
+      color-mix(in srgb, var(--stage) 30%, transparent) 55%,
+      color-mix(in srgb, var(--stage) 30%, transparent) 70%,
+      var(--stage) 84%, var(--stage) 100%);}
+  .cover-band{position:absolute; z-index:2; left:-30%; right:-30%; top:-24%; height:66%;
     transform:rotate(-15deg); pointer-events:none;
     background:linear-gradient(90deg, var(--navy) 0 34%, var(--sky) 34% 46%, #efe7d6 46% 54%, #cf2418 54% 82%, var(--navy) 82% 100%);
     box-shadow:0 22px 40px rgba(0,0,0,.28);}
@@ -192,6 +199,12 @@
 
   <!-- ============ COVER ============ -->
   <section class="screen cover" id="cover">
+    <div class="cover-bgvid" aria-hidden="true">
+      <video class="cover-vid" autoplay muted loop playsinline preload="auto">
+        <source src="loop.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="cover-cream" aria-hidden="true"></div>
     <div class="cover-band" aria-hidden="true"></div>
     <div class="cover-num">'26</div>
     <div class="cover-inner">
@@ -322,9 +335,7 @@
           <li>San Bernardino <b>2.066<small> m</small></b></li>
           <li>Oberalppass <b>2.044<small> m</small></b></li>
           <li>Malojapass <b>1.815<small> m</small></b></li>
-        </ul>
-        <p>Elf Pässe in vier Tagen — das haben wir 2026 gefahren. Höchster Punkt: Nufenen, 2.478 m. Im August alle offen; vor Abfahrt kurz auf Sperrungen checken.</p>
-      </div>
+        </ul>      </div>
       <div class="note"><h3>Foto-Wall</h3><p>Postet eure Bilder auf Instagram unter <b>#SipNRefuel26</b> — so sammeln wir alle Fotos der Tour an einem Ort.</p></div>
       <div class="note"><h3>Vignette</h3><p>CH-E-Vignette Pflicht (Tag 1 &amp; 4) — offiziell &amp; ohne Aufschlag über BAZG (admin.ch), gilt auch fürs Wechselschild. Italien: keine Vignette, aber Maut.</p></div>
       <div class="note"><h3>Espresso am Furka</h3><p>Freitagmorgen, gegen 5 Uhr noch in der Dunkelheit hoch zum Furkapass — und wenn die Sonne aufgeht, gibt's frischen Espresso. Kaffeestopp vor der Königsetappe.</p></div>
@@ -418,6 +429,12 @@
     document.addEventListener('visibilitychange', function(){ if(!document.hidden) tryPlay(); });
     window.addEventListener('touchstart', tryPlay, {once:true, passive:true});
     window.addEventListener('click', tryPlay, {once:true});
+    if(!reduce){                          // dezenter Parallax fürs Hintergrundvideo
+      window.addEventListener('scroll', function(){
+        var y=window.scrollY||0;
+        if(y < window.innerHeight){ cv.style.transform='translateY('+(y*0.18).toFixed(1)+'px)'; }
+      }, {passive:true});
+    }
   }
 })();
 </script>
