@@ -8,7 +8,7 @@
         { "label": "Markkleeberg",                "role": "start", "coord": "51.278575, 12.371882" },
         { "label": "Treffpunkt 1 · Pörstental",   "role": "stop",  "address": "Rastanlage Pörstental West, 06686 Lützen, Deutschland" },
         { "label": "Treffpunkt 2 · Lipperts West","role": "stop",  "address": "Rastplatz Lipperts West, A9, 85095 Denkendorf, Deutschland" },
-        { "label": "Treffpunkt 3 · Landquart",    "role": "stop",  "address": "Coop Pronto Tankstelle, Tardis 2, 7302 Landquart, Schweiz" },
+        { "label": "Treffpunkt 3 · Landquart",    "role": "stop",  "address": "Tardis Parkplatz, Tardis 56, 7302 Maienfeld, Schweiz" },
         { "label": "Oberalppass",                 "role": "pass",  "coord": "46.658739, 8.671169" },
         { "label": "Furkapass",                   "role": "pass",  "coord": "46.572685, 8.415184" },
         { "label": "Grimselpass",                 "role": "pass",  "coord": "46.561519, 8.337697" },

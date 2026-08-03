@@ -229,7 +229,7 @@
   <!-- ============ TAG 1 ============ -->
   <section class="screen stage" id="tag1"
     data-label="Navi · Tag 1 — Grimselpass"
-    data-nav="https://www.google.com/maps/dir/?api=1&destination=46.562200,8.337200&waypoints=46.909583,9.797847%7C46.658739,8.671169%7C46.572685,8.415184%7C46.561519,8.337697&travelmode=driving">
+    data-nav="https://www.google.com/maps/dir/?api=1&destination=46.562200,8.337200&waypoints=51.278575,12.371882%7C46.909583,9.797847%7C46.658739,8.671169%7C46.572685,8.415184%7C46.561519,8.337697&travelmode=driving">
     <div class="stage__top"><span class="kicker">Etappe 1 / 4</span><span class="datepill">Do · 6. Aug</span></div>
     <div class="stage__id"><div class="num"><span>1</span></div>
       <h2 class="route display">Markkleeberg <span class="arw">→</span> Grimselpass</h2></div>
@@ -259,7 +259,7 @@
   <!-- ============ TAG 2 ============ -->
   <section class="screen stage" id="tag2"
     data-label="Navi · Tag 2 — Sils i. E."
-    data-nav="https://www.google.com/maps/dir/?api=1&destination=46.413629,9.758549&waypoints=46.472897,8.389343%7C46.497149,9.171140%7C46.505616,9.330336%7C46.399936,9.695807&travelmode=driving">
+    data-nav="https://www.google.com/maps/dir/?api=1&destination=46.413629,9.758549&waypoints=46.562200,8.337200%7C46.472897,8.389343%7C46.497149,9.171140%7C46.505616,9.330336%7C46.399936,9.695807&travelmode=driving">
     <div class="stage__top"><span class="kicker">Etappe 2 / 4</span><span class="datepill">Fr · 7. Aug</span></div>
     <div class="stage__id"><div class="num"><span>2</span></div>
       <h2 class="route display">Grimselpass <span class="arw">→</span> Sils i.&nbsp;E.</h2></div>
@@ -287,7 +287,7 @@
   <!-- ============ TAG 3 ============ -->
   <section class="screen stage" id="tag3"
     data-label="Navi · Tag 3 — Livigno"
-    data-nav="https://www.google.com/maps/dir/?api=1&destination=46.528391,10.128370&waypoints=46.415784,10.011477%7C46.215672,10.173178%7C46.467670,10.377466%7C46.495174,10.209119&travelmode=driving">
+    data-nav="https://www.google.com/maps/dir/?api=1&destination=46.528391,10.128370&waypoints=46.413629,9.758549%7C46.415784,10.011477%7C46.215672,10.173178%7C46.467670,10.377466%7C46.495174,10.209119&travelmode=driving">
     <div class="stage__top"><span class="kicker">Etappe 3 / 4</span><span class="datepill">Sa · 8. Aug</span></div>
     <div class="stage__id"><div class="num"><span>3</span></div>
       <h2 class="route display">Sils i.&nbsp;E. <span class="arw">→</span> Livigno</h2></div>
@@ -311,7 +311,7 @@
   <!-- ============ TAG 4 ============ -->
   <section class="screen stage" id="tag4"
     data-label="Navi · Tag 4 — Heimweg"
-    data-nav="https://www.google.com/maps/dir/?api=1&destination=51.278575,12.371882&waypoints=46.697984,10.094331%7C46.747500,9.950284%7C46.796198,9.823689&travelmode=driving">
+    data-nav="https://www.google.com/maps/dir/?api=1&destination=51.278575,12.371882&waypoints=46.528391,10.128370%7C46.697984,10.094331%7C46.747500,9.950284%7C46.796198,9.823689&travelmode=driving">
     <div class="stage__top"><span class="kicker">Etappe 4 / 4</span><span class="datepill">So · 9. Aug</span></div>
     <div class="stage__id"><div class="num"><span>4</span></div>
       <h2 class="route display">Livigno <span class="arw">→</span> Markkleeberg</h2></div>
@@ -429,10 +429,10 @@
     function buildNav(stops){
       function loc(s){ return s.address ? encodeURIComponent(s.address) : (s.coord ? s.coord.replace(/\s+/g,'') : null); }
       var s=(stops||[]).filter(function(x){return x && (x.address||x.coord);});
-      var route=s.filter(function(x){return x.role!=='start';});  // role:start weglassen -> Navi vom aktuellen Standort (Handy zeigt 'Start')
-      if(route.length<1) return null;
-      var dest=loc(route[route.length-1]);
-      var way=route.slice(0,-1).map(loc).filter(Boolean);
+      if(s.length<1) return null;
+      // origin bleibt WEG -> Navi ab aktuellem Standort (Handy zeigt 'Start'); ALLE geplanten Stopps (inkl. Start) bleiben als Wegpunkte, letzter = Ziel
+      var dest=loc(s[s.length-1]);
+      var way=s.slice(0,-1).map(loc).filter(Boolean);
       var u='https://www.google.com/maps/dir/?api=1&destination='+dest+'&travelmode=driving';
       if(way.length) u+='&waypoints='+way.join('%7C');
       return u;
