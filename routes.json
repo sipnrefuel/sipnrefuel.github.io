@@ -1,49 +1,49 @@
 {
-  "_hinweis": "Quelle der Tagesrouten. Koordinaten im Google-Maps-Format 'lat, lng' — in Google Maps Rechtsklick auf den Punkt -> oberster Eintrag im Menu kopieren -> hier einfuegen. coord=null = wird in der Navi-Route uebersprungen (nur Anzeige). Reihenfolge = Fahrreihenfolge; erster Stopp=Start, letzter=Ziel. Max ~9 Wegpunkte zwischen Start/Ziel.",
+  "_hinweis": "Tagesrouten. Pro Stopp entweder 'address' (volle Postadresse, bevorzugt fuer Hotels/Rastplaetze) ODER 'coord' ('lat, lng' im Google-Maps-Copy-Format, fuer Paesse). Rollen: start/pass/stop. Die Navi-Route startet vom AKTUELLEN STANDORT (role:start wird als Startpunkt weggelassen), letzter Stopp = Ziel, alles dazwischen = Wegpunkte (max ~9). So erscheint am Handy sofort der 'Start'-Button. Adressen/Koordinaten stammen aus Joes Chat-Links bzw. den PDFs.",
   "days": [
     {
       "id": "tag1",
       "title": "Markkleeberg → Grimsel",
       "stops": [
         { "label": "Markkleeberg",                "role": "start", "coord": "51.278575, 12.371882" },
-        { "label": "Treffpunkt 1 · Pörstental",   "role": "stop",  "coord": null },
-        { "label": "Treffpunkt 2 · Lipperts West","role": "stop",  "coord": null },
-        { "label": "Treffpunkt 3 · Landquart",    "role": "stop",  "coord": "46.909583, 9.797847" },
+        { "label": "Treffpunkt 1 · Pörstental",   "role": "stop",  "address": "Rastanlage Pörstental West, 06686 Lützen, Deutschland" },
+        { "label": "Treffpunkt 2 · Lipperts West","role": "stop",  "address": "Rastplatz Lipperts West, A9, 85095 Denkendorf, Deutschland" },
+        { "label": "Treffpunkt 3 · Landquart",    "role": "stop",  "address": "Coop Pronto Tankstelle, Tardis 2, 7302 Landquart, Schweiz" },
         { "label": "Oberalppass",                 "role": "pass",  "coord": "46.658739, 8.671169" },
         { "label": "Furkapass",                   "role": "pass",  "coord": "46.572685, 8.415184" },
         { "label": "Grimselpass",                 "role": "pass",  "coord": "46.561519, 8.337697" },
-        { "label": "Hotel Grimsel Passhöhe",      "role": "stop",  "coord": "46.562200, 8.337200" }
+        { "label": "Hotel Grimsel Passhöhe",      "role": "stop",  "address": "Hotel Grimsel Passhöhe, 3999 Oberwald, Schweiz" }
       ]
     },
     {
       "id": "tag2",
       "title": "Grimsel → Sils i.E.",
       "stops": [
-        { "label": "Hotel Grimsel Passhöhe",   "role": "start", "coord": "46.562200, 8.337200" },
+        { "label": "Hotel Grimsel Passhöhe",   "role": "start", "address": "Hotel Grimsel Passhöhe, 3999 Oberwald, Schweiz" },
         { "label": "Nufenenpass",              "role": "pass",  "coord": "46.472897, 8.389343" },
         { "label": "San-Bernardino-Pass",      "role": "pass",  "coord": "46.497149, 9.171140" },
         { "label": "Splügenpass",              "role": "pass",  "coord": "46.505616, 9.330336" },
         { "label": "Malojapass",               "role": "pass",  "coord": "46.399936, 9.695807" },
-        { "label": "Hotel Schweizerhof, Sils", "role": "stop",  "coord": "46.413629, 9.758549" }
+        { "label": "Hotel Schweizerhof, Sils", "role": "stop",  "address": "Hotel Schweizerhof, Via da Fex 1, 7514 Sils im Engadin, Schweiz" }
       ]
     },
     {
       "id": "tag3",
       "title": "Sils i.E. → Livigno",
       "stops": [
-        { "label": "Hotel Schweizerhof, Sils", "role": "start", "coord": "46.413629, 9.758549" },
+        { "label": "Hotel Schweizerhof, Sils", "role": "start", "address": "Hotel Schweizerhof, Via da Fex 1, 7514 Sils im Engadin, Schweiz" },
         { "label": "Berninapass",              "role": "pass",  "coord": "46.415784, 10.011477" },
         { "label": "Tirano",                   "role": "stop",  "coord": "46.215672, 10.173178" },
         { "label": "Bormio",                   "role": "stop",  "coord": "46.467670, 10.377466" },
         { "label": "Passo di Foscagno",        "role": "pass",  "coord": "46.495174, 10.209119" },
-        { "label": "Hotel Marzia, Livigno",    "role": "stop",  "coord": "46.528391, 10.128370" }
+        { "label": "Hotel Marzia, Livigno",    "role": "stop",  "address": "Hotel Marzia, Via Pedrana 388, 23041 Livigno, Italien" }
       ]
     },
     {
       "id": "tag4",
       "title": "Livigno → Markkleeberg",
       "stops": [
-        { "label": "Hotel Marzia, Livigno", "role": "start", "coord": "46.528391, 10.128370" },
+        { "label": "Hotel Marzia, Livigno", "role": "start", "address": "Hotel Marzia, Via Pedrana 388, 23041 Livigno, Italien" },
         { "label": "Zernez",                "role": "stop",  "coord": "46.697984, 10.094331" },
         { "label": "Flüelapass",            "role": "pass",  "coord": "46.747500, 9.950284" },
         { "label": "Davos",                 "role": "stop",  "coord": "46.796198, 9.823689" },
