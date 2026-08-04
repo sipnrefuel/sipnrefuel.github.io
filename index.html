@@ -210,7 +210,7 @@
   <!-- ============ COVER ============ -->
   <section class="screen cover" id="cover">
     <div class="cover-bgvid" aria-hidden="true">
-      <video class="cover-vid" autoplay muted loop playsinline preload="auto">
+      <video class="cover-vid" autoplay muted loop playsinline webkit-playsinline preload="auto" poster="cover-poster.jpg" disablepictureinpicture>
         <source src="loop.mp4" type="video/mp4">
       </video>
     </div>
@@ -467,11 +467,13 @@
   // nudge background video to autoplay (mobile-friendly)
   var cv=document.querySelector('.cover-vid');
   if(cv){
-    var tryPlay=function(){ cv.muted=true; var p=cv.play(); if(p&&p.catch){ p.catch(function(){}); } };
+    cv.muted=true; cv.playsInline=true; cv.setAttribute('muted','');
+    var tryPlay=function(){ if(cv.paused){ var p=cv.play(); if(p&&p.catch){ p.catch(function(){}); } } };
+    ['loadeddata','canplay','canplaythrough'].forEach(function(ev){ cv.addEventListener(ev, tryPlay); });
+    cv.addEventListener('ended', function(){ try{ cv.currentTime=0; }catch(e){} tryPlay(); });   // Loop-Fallback, falls loop-Attribut hakt
     tryPlay();
     document.addEventListener('visibilitychange', function(){ if(!document.hidden) tryPlay(); });
-    window.addEventListener('touchstart', tryPlay, {once:true, passive:true});
-    window.addEventListener('click', tryPlay, {once:true});
+    ['touchstart','pointerdown','click','scroll'].forEach(function(ev){ window.addEventListener(ev, tryPlay, {passive:true}); });
     if(!reduce){                          // dezenter Parallax fürs Hintergrundvideo
       window.addEventListener('scroll', function(){
         var y=window.scrollY||0;
